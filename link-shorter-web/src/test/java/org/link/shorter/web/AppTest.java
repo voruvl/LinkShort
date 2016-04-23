@@ -25,18 +25,6 @@ public class AppTest extends TestCase {
 	@Autowired
 	private TagService tagService;
 
-//	public TestShortLink() {
-//		super();
-//	}
-//
-//	public TestShortLink(String testName) {
-//		super(testName);
-//	}
-//
-//	public static Test suite() {
-//		return new TestSuite(TestShortLink.class);
-//	}
-
 	public void testApp() {
 		GenericXmlApplicationContext apx = new GenericXmlApplicationContext();
 		apx.load("spring/root-context.xml");
