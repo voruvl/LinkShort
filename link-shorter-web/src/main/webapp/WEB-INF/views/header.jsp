@@ -13,7 +13,7 @@
 			<a href="links" class="btn btn-info glyphicon glyphicon-link btn-xs">
 				Ссылки</a> <a href="tags"
 				class="btn btn-info glyphicon glyphicon-tags btn-xs"> Тэги</a> <a
-				href="login" class="btn btn-info glyphicon-log-out btn-xs"> Вход</a>
+				href="login" class="btn btn-info glyphicon glyphicon-log-in btn-xs"> Вход</a>
 			<a href="regform"
 				class="btn btn-info glyphicon glyphicon glyphicon-briefcase btn-xs">
 				Регистрация</a>
