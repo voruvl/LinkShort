@@ -16,27 +16,11 @@
 </style>
 </head>
 <body>
-<<<<<<< HEAD
+
 	<nav role="navigation" class="navbar navbar-default">
 		<div class="navbar-header">
 			<span class="navbar-brand"  style="font:30 pt; text-transform: uppercase;"><locale:message
 					code="label.name_page" /></span>
-=======
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-	<div class="row">
-		<div class="col-md-8">
-			<a href="links" class="btn btn-info glyphicon glyphicon-link btn-xs">
-				Ссылки</a> <a href="tags"
-				class="btn btn-info glyphicon glyphicon-tags btn-xs"> Тэги</a> <a
-				href="login" class="btn btn-info glyphicon glyphicon-log-in btn-xs"> Вход</a>
-			<a href="regform"
-				class="btn btn-info glyphicon glyphicon glyphicon-briefcase btn-xs">
-				Регистрация</a>
-
->>>>>>> branch 'master' of https://github.com/voruvl/LinkShort.git
 		</div>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="login"><span class="glyphicon glyphicon-log-in">
