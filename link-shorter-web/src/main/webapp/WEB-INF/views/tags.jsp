@@ -1,7 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="locale"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <html>
 <head>
 <title>Тэги</title>
@@ -20,11 +21,11 @@
 		<jsp:include page="header.jsp" />
 		<form class="form-inline" action="addTag" method="get" id="dialog">
 			<div class="form-group">
-				<label>Название тэга</label> <input id="nameTag" name="nameTag"
+				<label><locale:message code="label.name_tag" /> </label> <input id="nameTag" name="nameTag"
 					type="text" placeholder="бла-бла-бла" />
 			</div>
 			<button class="btn btn-primary" type="submit">
-				Добавить <span class="glyphicon glyphicon-save"></span>
+				<locale:message code="button.insert" /> <span class="glyphicon glyphicon-save"></span>
 			</button>
 
 		</form>
@@ -32,7 +33,7 @@
 			<thead>
 				<tr class="danger">
 					<th>№</th>
-					<th>Название тэга</th>
+					<th><locale:message code="label.name_tag" /></th>
 				</tr>
 			</thead>
 			<tbody>

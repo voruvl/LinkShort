@@ -1,7 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="locale"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <html>
 <head>
 <title>Выбор тэга</title>
@@ -23,7 +24,7 @@
 		<jsp:include page="header.jsp" />
 		<div class="jumbotron">
 			<h3>
-				Скриншот сайта <span style="color: red; text-transform: uppercase;">
+				<locale:message code="form.screen" /> <span style="color: red; text-transform: uppercase;">
 					${link.description}</span>
 			</h3>
 			<img class="img-thumbnail"
@@ -34,7 +35,7 @@
 <!-- 			<div class="container"> -->
 				<div class="row">
 					<div class="col-md-6">
-						<h3>Добавить тэг ссылке</h3>
+						<h3><locale:message code="form.add_tag" /></h3>
 						<c:forEach items="${tags}" var="tag" varStatus="loop">
 							<a href="editTagToLink?idLink=${link.id}&idTag=${tag.id} "
 								class="btn btn-default btn-xs"><span
@@ -42,7 +43,7 @@
 						</c:forEach>
 					</div>
 					<div class="col-md-6">
-						<h3>Удалить тэг</h3>
+						<h3><locale:message code="form.del_tag" /></h3>
 						<c:forEach items="${link.tags}" var="tag" varStatus="loop">
 							<a href="deleteTagFromLink?idLink=${link.id}&idTag=${tag.id} "
 								class="btn btn-default btn-xs"><span

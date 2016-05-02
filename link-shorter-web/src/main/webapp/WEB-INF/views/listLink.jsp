@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="locale"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -18,15 +19,16 @@
 <body>
 	<div class="panel-footer">
 		<jsp:include page="header.jsp" />
-		Все ссылки c тэгом <span style="color: red; ">#${selectTag.name}</span>     
+		<locale:message code="label.list_whith_tag" /> <span style="color: red; ">#${selectTag.name}</span>     
 		<table id="links" class="table table-bordered">
 			<thead>
 				<tr class="danger">
 					<th>№</th>
 					<%--	<th>Full link</th>--%>
-					<th>Сокращенная ссылка</th>
-					<th>Описание</th>
-					<th>Автор ссылки</th>
+					<th><locale:message code="table.short_link" /></th>
+					<th><locale:message code="table.description" /></th>
+					<th><locale:message code="table.autor" /></th>
+								
 				</tr>
 			</thead>
 			<tbody>

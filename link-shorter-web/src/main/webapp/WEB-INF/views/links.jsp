@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="locale"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -16,21 +17,33 @@
 </style>
 </head>
 <body>
+
 	<div class="panel-footer">
+		<nav role="navigation" class="navbar navbar-default">
+			<div class="nav navbar-nav navbar-right">
+				<span  class="navbar-brand"><locale:message code="form.lang" />: </span>
+				<a href="?lang=en" class="navbar-brand">En</a> <span class="navbar-brand">|</span>
+				<a href="?lang=ru" class="navbar-brand">Ru</a>
+
+			</div>
+		</nav>
+
 		<jsp:include page="header.jsp" />
 		<c:if test="${pageContext.request.userPrincipal.name != null}">
 			<form class="form-horizontal" role="form" action="addLink"
 				method="get" id="dialog">
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">URL ссылки</label>
+					<label class="col-sm-2 control-label"><locale:message
+							code="label.url_link" /></label>
 					<div class="col-sm-10">
 						<input id="fullLink" name="fullLink" class="form-control"
 							type="text" placeholder="http://www.google.com" />
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Описание</label>
+					<label class="col-sm-2 control-label"><locale:message
+							code="table.description" /></label>
 					<div class="col-sm-10">
 						<textarea class="form-control" rows="2" name="description"
 							placeholder="Лучший поисковик Iнэта"></textarea>
@@ -42,7 +55,8 @@
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button class="btn btn-primary" type="submit">
-							Вставить <span class="glyphicon glyphicon-save"></span>
+							<locale:message code="button.insert" />
+							<span class="glyphicon glyphicon-save"></span>
 						</button>
 					</div>
 				</div>
@@ -53,12 +67,13 @@
 				<tr class="danger">
 					<th style="width: 3%">№</th>
 					<%--	<th>Full link</th>--%>
-					<th style="width: 20%">Сокращенная ссылка</th>
-					<th style="width: 15%">Описание</th>
-					<th style="width: 15%">Тэги</th>
-					<th style="width: 10%">Автор ссылки</th>
+					<th style="width: 20%"><locale:message code="table.short_link" /></th>
+					<th style="width: 15%"><locale:message
+							code="table.description" /></th>
+					<th style="width: 15%"><locale:message code="table.tags" /></th>
+					<th style="width: 10%"><locale:message code="table.autor" /></th>
 					<c:if test="${pageContext.request.userPrincipal.name != null}">
-						<th style="width: 8%">Статистика переходов</th>
+						<th style="width: 8%"><locale:message code="table.count" /></th>
 						<th style="width: 5%"></th>
 					</c:if>
 				</tr>
@@ -75,7 +90,7 @@
 						<td>${link.description}</td>
 						<td><c:forEach items="${link.tags}" var="tag"
 								varStatus="loop">
-								<a href="listLink?idTag=${tag.id}" title="Список ссылок"
+								<a href="listLink?idTag=${tag.id}" title="list links"
 									class="btn btn-default btn-xs active" role="button"> <span
 									class="glyphicon glyphicon-tag"></span><u>${tag.name}</u>
 								</a>
@@ -84,8 +99,8 @@
 						<c:if test="${pageContext.request.userPrincipal.name != null}">
 							<td>${link.count}</td>
 							<td><a href="editTag?idLink=${link.id} "
-								class="btn btn-success btn-xs">Тэги <span
-									class="glyphicon glyphicon-edit"></span></a></td>
+								class="btn btn-success btn-xs"><locale:message
+										code="button.tags" /> <span class="glyphicon glyphicon-edit"></span></a></td>
 						</c:if>
 					</tr>
 				</c:forEach>

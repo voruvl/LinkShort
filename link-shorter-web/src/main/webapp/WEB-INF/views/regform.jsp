@@ -1,7 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="locale"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <html>
 <head>
 <title>Links</title>
@@ -25,7 +26,7 @@
 </style>
 </head>
 <body>
-	<h2>Регистрация пользователя</h2>
+	<h2><locale:message code="form.reg_user" /></h2>
 
 	<c:if test="${not empty passwordfail}">
 		<div class="error">${passwordfail}</div>
@@ -38,7 +39,7 @@
 			<!-- Заголовок модального окна -->
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4 class="modal-title" id="myModalLabel">Регистрация</h4>
+				<h4 class="modal-title" id="myModalLabel"><locale:message code="form.reg_user" /></h4>
 			</div>
 			<!-- Основная часть модального окна, содержащая форму для регистрации -->
 			<div class="modal-body">
@@ -46,7 +47,7 @@
 				<form action="adduser" method="post" role="form" class="form-horizontal">
 					<!-- Блок для ввода логина -->
 					<div class="form-group has-feedback">
-						<label for="login" class="control-label col-xs-3">Логин:</label>
+						<label for="login" class="control-label col-xs-3"><locale:message code="label.login" /></label>
 						<div class="col-xs-6">
 							<div class="input-group">
 								<span class="input-group-addon"><i
@@ -58,7 +59,7 @@
 					</div>
 					<!-- Блок для ввода пароля -->
 					<div class="form-group has-feedback">
-						<label for="email" class="control-label col-xs-3">Пароль</label>
+						<label for="email" class="control-label col-xs-3"><locale:message code="form.password" /></label>
 						<div class="col-xs-6">
 							<div class="input-group">
 								<span class="input-group-addon"><i
@@ -69,8 +70,7 @@
 						</div>
 					</div>
 					<div class="form-group has-feedback">
-						<label for="email" class="control-label col-xs-3">Подтверждение
-							пароля</label>
+						<label for="email" class="control-label col-xs-3"><locale:message code="form.confirm_password" /></label>
 						<div class="col-xs-6">
 							<div class="input-group">
 								<span class="input-group-addon"><i
@@ -82,8 +82,8 @@
 					</div>
 					<div class="modal-footer">
 
-						<button id="save" type="submit" class="btn btn-primary">Регистрация</button>
-						<a href="links" type="button" class="btn btn-primary">Отмена</a>
+						<button id="save" type="submit" class="btn btn-primary"><locale:message code="button.registration" /></button>
+						<a href="links" type="button" class="btn btn-primary"><locale:message code="button.cancel" /></a>
 					</div>
 				</form>
 			</div>
