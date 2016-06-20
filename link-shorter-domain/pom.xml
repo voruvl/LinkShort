@@ -8,11 +8,11 @@
 		<artifactId>link-shorter</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>link-shorter-domain</artifactId>
 	<name>link-shorter-domain</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<dependencies>
 		<!-- Spring and Transactions -->
 		<dependency>
@@ -47,8 +47,6 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
-
 		<!-- Test Artifacts -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -62,21 +60,5 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
-				<configuration>
-				<source>${java.version}</source>
-				<target>${java.version}</target>
-				<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 @Service
 public class AppTest extends TestCase {
@@ -47,13 +45,11 @@ public class AppTest extends TestCase {
 		tagService.insertTag(tag1);
 		tagService.insertTag(tag2);
 		Link link = new Link();
-		link.setFullLink("http://team.instinctools.by/");
-		link.setDescription("Хочу здесь работать");
+		link.setFullLink("https://www.java.com/ru/download/");
+		link.setDescription("Загрузить Java");
 		link.setUser(user);
 		link.addTag(tag1);
 		link.addTag(tag2);
 		linkService.insertLink(link);
-		System.out.println(user);
-		System.out.println(link);
 	}
 }

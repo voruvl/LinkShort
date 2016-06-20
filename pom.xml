@@ -22,8 +22,6 @@
 		<module>link-shorter-dao-impl</module>
 		<module>link-shorter-services</module>
 		<module>link-shorter-web</module>
-
-		
 	</modules>
 	<dependencies>
 		<dependency>
@@ -33,4 +31,18 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
